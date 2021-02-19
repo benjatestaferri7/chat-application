@@ -12,6 +12,7 @@ const MyMessage = ({ message }) => {
       />
     );
   }
+  
   return (
     <div
       className="message"
