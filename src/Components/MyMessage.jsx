@@ -1,11 +1,30 @@
-import React from 'react'
+import React from 'react';
 
-const MyMessage = () => {
+const MyMessage = ({ message }) => {
+  //if the message is greater than 0, it is an image
+  if (message?.attatchments?.length > 0) {
     return (
-        <div>
-            MyMessage
-        </div>
-    )
-}
+      <img
+        src={message.attatchments[0].file}
+        alt="message-attatchment"
+        className="message-image"
+        style={{ float: 'right' }}
+      />
+    );
+  }
+  return (
+    <div
+      className="message"
+      style={{
+        float: 'right',
+        marginRight: '18px',
+        color: 'white',
+        backgroundColor: '#3B2A50'
+      }}
+    >
+      {message.text}
+    </div>
+  );
+};
 
-export default MyMessage
+export default MyMessage;
