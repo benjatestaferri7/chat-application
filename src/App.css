@@ -6,62 +6,76 @@
   letter-spacing: 0.5px;
 }
 
+:root {
+  --bg-Dark: #121212;
+  --purple: #3c429c;
+  --lightpurple: #6667e7;
+  --primary: #3b2a50;
+  --gray: #252525;
+}
+
 .ce-chat-list {
-  background-color: rgb(240, 240, 240) !important;
+  background-color: var(--bg-Dark) !important;
 }
 
 .ce-chats-container {
-  background-color: rgb(240, 240, 240) !important;
+  background-color: var(--purple) !important;
 }
 
 .ce-active-chat-card {
-  background-color: #cabcdc !important;
-  border: 4px solid #cabcdc !important;
+  background-color: var(--purple) !important;
+  border: 4px solid var(--lightpurple) !important;
   border-radius: 0px !important;
 }
 
 .ce-chat-subtitle-text {
-  color: #595959 !important;
+  color: #f1f1f1 !important;
 }
 
 .ce-chat-form-container {
-  padding-bottom: 20px !important;
+  padding-bottom: 15px !important;
+  border-radius: 10px;
 }
 
 .ce-text-input {
+  background-color: var(--gray);
   border-radius: 6px !important;
-  border: 1px solid #3b2a50 !important;
+  border: 3px solid var(--lightpurple) !important;
+  color: #f1f1f1;
 }
 
 .ce-primary-button {
   border-radius: 6px !important;
-  background-color: #7554a0 !important;
+  background-color: var(--lightpurple) !important;
   position: relative;
   bottom: 1px;
 }
 
 .ce-danger-button {
-  background-color: white !important;
+  background-color: rgb(94, 92, 92) !important;
   border-radius: 22px !important;
 }
 
 .ce-settings {
-  background-color: rgb(240, 240, 240) !important;
+  background-color: var(--bg-Dark) !important;
+  color: gray;
 }
 
 .ce-autocomplete-input {
   border-radius: 6px !important;
-  border: 1px solid #3b2a50 !important;
+  border: 3px solid var(--lightpurple) !important;
+  background-color: var(--gray);
+  color: #f1f1f1;
 }
 
 .ce-autocomplete-options {
   border-radius: 6px !important;
-  border: 1px solid #3b2a50 !important;
-  background-color: white !important;
+  border: 1px solid var(--primary) !important;
+  background-color: var(--lightpurple) !important;
 }
 
 .ce-chat-settings-container {
-  padding-top: 12px !important;
+  padding-top: 15px !important;
 }
 
 .ce-chat-avatars-row {
@@ -73,8 +87,8 @@
 .chat-feed {
   height: 100%;
   width: 100%;
-  overflow: scroll;
-  background-color: rgb(240, 240, 240);
+  overflow: auto;
+  background-color: var(--bg-Dark);
 }
 
 .chat-title-container {
@@ -86,13 +100,13 @@
 .chat-title {
   color: #7554a0;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .chat-subtitle {
-  color: #7554a0;
+  color: var(--lightpurple);
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   padding-top: 4px;
 }
 
@@ -158,21 +172,23 @@
   bottom: 0px;
   width: calc(100% - 36px);
   padding: 18px;
-  background-color: rgb(240, 240, 240);
+  border: 3px solid var(--lightpurple);
+  background-color: var(--bg-Dark);
 }
 
 .message-form {
   overflow: hidden;
   border-radius: 6px;
-  border: 1px solid #3b2a50;
-  background-color: white;
+  border: 1px solid var(--primary);
+  background-color: var(--purple);
 }
 
 .message-input {
   height: 40px;
   width: calc(100% - 132px);
-  background-color: white;
-  border: 1px solid white;
+  background-color: var(--gray);
+  border: 1px solid var(--lightpurple);
+  color: #f1f1f1;
   padding: 0px 18px;
   outline: none;
   font-size: 15px;
@@ -186,8 +202,8 @@
 
 .send-button {
   height: 42px;
-  background-color: white;
-  border: 1px solid white;
+  background-color: var(--purple);
+  border: 1px solid var(--lightpurple);
   padding: 0px 18px;
   cursor: pointer;
 }
@@ -217,35 +233,24 @@
 .wrapper {
   height: 100vh;
   width: 100%;
-  background: rgb(117, 84, 160);
-  background: linear-gradient(
-    90deg,
-    rgba(117, 84, 160, 1) 7%,
-    rgba(117, 84, 160, 1) 17%,
-    rgba(106, 95, 168, 1) 29%,
-    rgba(99, 103, 174, 1) 44%,
-    rgba(87, 116, 184, 1) 66%,
-    rgba(70, 135, 198, 1) 83%,
-    rgba(44, 163, 219, 1) 96%,
-    rgba(22, 188, 237, 1) 100%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background: var(--bg-Dark);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .input {
-  color: #333;
+  color: #b3b0b0;
   font-size: 1.2rem;
   margin: 0 auto;
   padding: 1.5rem 2rem;
   border-radius: 0.2rem;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--purple);
   border: none;
   width: 90%;
   display: block;
   border-bottom: 0.3rem solid transparent;
+  border-radius: 30px;
   transition: all 0.3s;
   outline: none;
   margin-bottom: 25px;
@@ -253,24 +258,28 @@
 
 .form {
   width: 400px;
+  height: 450px;
+  border-radius: 50px;
+  background-color: var(--gray);
 }
 
 .title {
   text-align: center;
-  color: white;
+  color: var(--lightpurple);
   margin-bottom: 30px;
   width: 100%;
   font-size: 2.3em;
+  padding: 25px;
 }
 
 .button {
-  border-radius: 4px;
-  border: none;
-  background-color: white;
+  border-radius: 30px;
+  border: 3px solid var(--purple);
+  background-color: var(--lightpurple);
   color: black;
   text-align: center;
   text-transform: uppercase;
-  font-size: 22px;
+  font-size: 24px;
   padding: 20px;
   width: 200px;
   transition: all 0.4s;
